@@ -33,8 +33,8 @@ $statement2->closeCursor();
 <main>
     <h1>Edit Product</h1>
     <form action="update_item.php" method="post" id="add_product_form">
-      
-        <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
+    <label>Poduct ID:</label>
+        <input name="product_id" value="<?php echo $product['productID'] ?>"readonly><br>
 
         <label>Category:</label>
         <select name="category_id">

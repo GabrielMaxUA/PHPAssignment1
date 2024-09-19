@@ -15,8 +15,8 @@
     }
     if($discount_percent === false) {
         $error .= 'Please enter a valid discount percentage.<br>';
-    } else if($discount_percent < 0 || $discount_percent > 100) {
-        $error .= 'Discount should be between 0% and 100%.<br>';
+    } else if($discount_percent < 0 || $discount_percent > 30) {
+        $error .= 'Discount should be between 0% and 30%.<br>';
     }
     
     // Only calculate if there are no validation errors

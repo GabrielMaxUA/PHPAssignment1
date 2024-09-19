@@ -41,7 +41,7 @@
         }
 
         // Only calculate if there are no errors
-        if ($error_message == '') {
+        if (empty($error_message)) {
             // Store values for display
             $years_display = $years;
 
@@ -51,24 +51,24 @@
                 $future_value += $future_value * $interest_rate * 0.01;
             }
 
-            // Apply formatting
+            // Applying formatting
             $investment_f = '$' . number_format($investment, 2);
             $yearly_rate_f = $interest_rate . '%';
             $future_value_f = '$' . number_format($future_value, 2);
 
-            // Store the results in session variables
+            // Storing the results in session variables
             $_SESSION['investment_f'] = $investment_f;
             $_SESSION['yearly_rate_f'] = $yearly_rate_f;
             $_SESSION['years_display'] = $years_display;
             $_SESSION['future_value_f'] = $future_value_f;
 
-            // Redirect to the same page to display results
+            // Redirecting to the same page to display results
             header("Location: " . $_SERVER['PHP_SELF']);
             exit();
         }
     }
 
-    // Check if there are results stored in the session to display after reload
+    // Checking if there are results stored in the session to display after reload
     if (isset($_SESSION['future_value_f'])) {
         $investment_f = $_SESSION['investment_f'];
         $yearly_rate_f = $_SESSION['yearly_rate_f'];

@@ -40,7 +40,8 @@ $statement2->closeCursor();
         <select name="category_id">
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>"
-                    <?php if ($category['categoryID'] == $product['categoryID']) echo 'selected'; ?>>
+                    <?php if ($category['categoryID'] == $product['categoryID']) 
+                    echo 'selected'; ?>>
                     <?php echo $category['categoryName']; ?>
                 </option>
             <?php endforeach; ?>
